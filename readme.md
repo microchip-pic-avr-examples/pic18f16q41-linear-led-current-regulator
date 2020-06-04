@@ -1,7 +1,7 @@
 <!-- Please do not change this html logo with link -->
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# Linear LED Current Regulator for PIC18F16Q41
+# Linear LED Current Regulator using PIC18F16Q41
 Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant current regulator for an LED based load. The key to this code example is the Q41's operational amplifier (OPA) module that directly controls the MOSFET which acts as a low-side current regulator.
 
 ## Related Documentation
@@ -10,7 +10,7 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 TBxxxx, "Using Operational Amplifiers in PIC16 and PIC18"<br>
 TBxxxx, "Optimizing Internal Operational Amplifiers for Analog Signal Conditioning"<br>
 ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
-<a href="https://github.com/microchip-pic-avr-examples/pic18f16q41-linear-led-current-regulator.git">Code Example: Switching LED Current Regulator</a><br>
+<a href="#">Code Example: Switching LED Current Regulator</a><br>
 
 ## Software Used
 
