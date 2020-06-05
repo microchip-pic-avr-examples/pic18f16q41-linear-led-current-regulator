@@ -53,10 +53,12 @@ The output current is approximately equal to **Iout = Vdac / 6.8**.
 Due to the MOSFET acting as voltage controlled current sink, there is some short circuit protection built into the circuit. However, it is not recommended to depend on this circuit as the only means of protection. Prolonged short circuits may cause heating of the FET and shunt.
 
 #### Higher Voltage Operation
-It is possible to run the LED supply at a voltage much higher than Vdd. In this case, the circuit's power dissipation may increase, which may cause issues.
+It is possible to run the LED supply at a voltage much higher than Vdd. Parts used must be evaluated for power dissipation and operating voltage. In addition, protecting the PIC18F16Q41 from voltages higher than Vdd is critical.
+
+**Warning: The input to any power or I/O pin on the PIC18F16Q41 must remain within the absolute maximum ratings stated in the device datasheet, otherwise permanent damage may occur.**
 
 #### Power Supply Oscillations
-In some setups with high inductance on the power supply, oscillations may occur in the waveform. In the event this occurs (generally with external supplies that have long leads), decoupling the LED supply near the LEDs assists in reducing or removing this effect. 
+In some setups with high inductance on the power supply, oscillations may occur in the waveform. In the event this occurs (generally with external supplies that have long leads), decoupling the LED supply near the LEDs assists in reducing or removing this effect.
 
 ## Summary
 This code example demonstrates the PIC18F16Q41's operational amplifier in use as a current regulator for LEDs.   
