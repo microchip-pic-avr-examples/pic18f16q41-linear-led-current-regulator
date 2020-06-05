@@ -54,14 +54,14 @@
 
 void OPA1_Initialize(void)
 {
-    //GSEL R1 = 8R and R2 = 8R, R2/R1 = 1; RESON Enabled; NSS OPA1IN0-; 
-    OPA1CON1 = 0x38;
+    //GSEL R1 = 15R and R2 = 1R, R2/R1 = 0.07; RESON Disabled; NSS OPA1IN0-; 
+    OPA1CON1 = 0x00;
 
-    //NCH GSEL; PCH OPA1IN+; 
-    OPA1CON2 = 0x12;
+    //NCH OPA1IN-; PCH DAC2_OUT; 
+    OPA1CON2 = 0x25;
 
-    //FMS OPA1OUT; PSS OPA1IN0+; 
-    OPA1CON3 = 0x80;
+    //FMS No Connection; PSS OPA1IN0+; 
+    OPA1CON3 = 0x00;
 
     //OREN Software Override; HWCH User Defined Feedback; ORPOL Non Inverted; HWCL User Defined Feedback; 
     OPA1HWC = 0x00;

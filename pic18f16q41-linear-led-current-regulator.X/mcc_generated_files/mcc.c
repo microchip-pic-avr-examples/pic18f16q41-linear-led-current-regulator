@@ -54,7 +54,7 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     FVR_Initialize();
-    DAC1_Initialize();
+    DAC2_Initialize();
     TMR2_Initialize();
     OPA1_Initialize();
 }

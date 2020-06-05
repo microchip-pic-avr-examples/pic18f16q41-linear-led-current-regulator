@@ -1,17 +1,17 @@
 /**
-  DAC1 Generated Driver API Header File
+  DAC2 Generated Driver API Header File
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    dac1.h
+    dac2.h
 
   @Summary
-    This is the generated header file for the DAC1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the generated header file for the DAC2 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description
-    This header file provides APIs for driver for DAC1.
+    This header file provides APIs for driver for DAC2.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
         Device            :  PIC18F16Q41
@@ -44,8 +44,8 @@
     SOFTWARE.
 */
 
-#ifndef DAC1_H
-#define DAC1_H
+#ifndef DAC2_H
+#define DAC2_H
 
 /**
   Section: Included Files
@@ -61,16 +61,16 @@
 #endif
 
 /**
-  Section: DAC1 APIs
+  Section: DAC2 APIs
 */
 
 /**
   @Summary
-    Initializes the DAC1
+    Initializes the DAC2
 
   @Description
-    This routine initializes the DAC1.
-    This routine must be called before any other DAC1 routine is called.
+    This routine initializes the DAC2.
+    This routine must be called before any other DAC2 routine is called.
     This routine should only be called once during system initialization.
 
   @Preconditions
@@ -87,25 +87,25 @@
 
   @Example
     <code>
-    DAC1_Initialize();
+    DAC2_Initialize();
     </code>
 */
-void DAC1_Initialize(void);
+void DAC2_Initialize(void);
 
 /**
   @Summary
-    Set Input data into DAC1.
+    Set Input data into DAC2.
 
   @Description
     This routine pass the digital input data into
-    DAC1 voltage reference control register.
+    DAC2 voltage reference control register.
 
   @Preconditions
-    The DAC1_Initialize() routine should be called
+    The DAC2_Initialize() routine should be called
     prior to use this routine.
 
   @Param
-    inputData - 8bit digital data to DAC1.
+    inputData - 8bit digital data to DAC2.
 
   @Returns
     None
@@ -114,11 +114,11 @@ void DAC1_Initialize(void);
     <code>
     uint8_t count=0;
 
-    DAC1_Initialize();
+    DAC2_Initialize();
 
     for(count=0; count<=30; count++)
     {
-        DAC1_SetOutput(count);
+        DAC2_SetOutput(count);
     }
 
     while(1)
@@ -126,41 +126,41 @@ void DAC1_Initialize(void);
     }
     </code>
 */
-void DAC1_SetOutput(uint8_t inputData);
+void DAC2_SetOutput(uint8_t inputData);
 
 /**
   @Summary
-    Read input data fed to DAC1.
+    Read input data fed to DAC2.
 
   @Description
     This routine reads the digital input data fed to
-    DAC1 voltage reference control register.
+    DAC2 voltage reference control register.
 
   @Preconditions
-    The DAC1_Initialize() routine should be called
+    The DAC2_Initialize() routine should be called
     prior to use this routine.
 
   @Param
     None
 
   @Returns
-    uint8_t inputData - digital data fed to DAC1
+    uint8_t inputData - digital data fed to DAC2
 
   @Example
     <code>
     uint8_t count=0;
     uint8_t inputData;
 
-    DAC1_Initialize();
+    DAC2_Initialize();
 
-    inputData = DAC1_GetOutput();
+    inputData = DAC2_GetOutput();
 
     while(1)
     {
     }
     </code>
 */
-uint8_t DAC1_GetOutput(void);
+uint8_t DAC2_GetOutput(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -168,7 +168,7 @@ uint8_t DAC1_GetOutput(void);
 
 #endif
 
-#endif // DAC1_H
+#endif // DAC2_H
 /**
  End of File
 */

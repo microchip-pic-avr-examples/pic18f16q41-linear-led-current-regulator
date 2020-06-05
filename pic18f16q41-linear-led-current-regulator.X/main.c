@@ -50,24 +50,24 @@ void LED_breathingStateMachine(void)
     
     if (state == 0)
     {
-        if (DAC1_GetOutput() == 0xFF)
+        if (DAC2_GetOutput() == 0xFF)
         {
             state = 1;
         }
         else
         {
-            DAC1_SetOutput(DAC1_GetOutput() + 1);
+            DAC2_SetOutput(DAC2_GetOutput() + 1);
         } 
     }
     else
     {
-        if (DAC1_GetOutput() == 0x00)
+        if (DAC2_GetOutput() == 0x00)
         {
             state = 0;
         }
         else
         {
-            DAC1_SetOutput(DAC1_GetOutput() - 1);
+            DAC2_SetOutput(DAC2_GetOutput() - 1);
         } 
     }
 }

@@ -1,17 +1,17 @@
 /**
-  DAC1 Generated Driver File
+  DAC2 Generated Driver File
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    dac1.c
+    dac2.c
 
   @Summary
-    This is the generated driver implementation file for the DAC1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the generated driver implementation file for the DAC2 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description
-    This source file provides APIs for DAC1.
+    This source file provides APIs for DAC2.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
         Device            :  PIC18F16Q41
@@ -49,28 +49,28 @@
 */
 
 #include <xc.h>
-#include "dac1.h"
+#include "dac2.h"
 
 /**
-  Section: DAC1 APIs
+  Section: DAC2 APIs
 */
 
-void DAC1_Initialize(void)
+void DAC2_Initialize(void)
 {
-    // OE DACOUT1 Enabled and DACOUT2 Disabled; DAC1EN enabled; NSS VSS; PSS FVR; 
-    DAC1CON = 0xA8;
-    // DAC1R 250; 
-    DAC1DATL = 0xFA;
+    // DAC2EN enabled; NSS VSS; PSS FVR; 
+    DAC2CON = 0x88;
+    // DAC2R 250; 
+    DAC2DATL = 0xFA;
 }
 
-void DAC1_SetOutput(uint8_t inputData)
+void DAC2_SetOutput(uint8_t inputData)
 {
-    DAC1DATL  = inputData;
+    DAC2DATL  = inputData;
 }
 
-uint8_t DAC1_GetOutput(void)
+uint8_t DAC2_GetOutput(void)
 {
-    return DAC1DATL;
+    return DAC2DATL;
 }
 /**
  End of File
