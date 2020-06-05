@@ -42,7 +42,7 @@ Before building or operating this demo, ensure that the parts selected for this 
 | RC2 | OPA1OUT (Connect to the gate of the MOSFET)
 
 ## Operation
-This code example configures the DAC2 to generate a triangle wave output that is used by the operational amplifier to set the current through the LED. The operational amplifier tries to set the current through the shunt resistor such that the voltage on the shunt (I x Rs) is equal to output of the DAC. 
+This code example configures the DAC2 to generate a triangle wave output that is used by the operational amplifier to set the current through the LED. The operational amplifier tries to set the current through the shunt resistor such that the voltage on the shunt (I x Rs) is equal to output of the DAC.
 
 The output current is approximately equal to **Iout = Vdac / 6.8**.
 
@@ -51,6 +51,12 @@ The output current is approximately equal to **Iout = Vdac / 6.8**.
 
 #### Short Circuit Protection
 Due to the MOSFET acting as voltage controlled current sink, there is some short circuit protection built into the circuit. However, it is not recommended to depend on this circuit as the only means of protection. Prolonged short circuits may cause heating of the FET and shunt.
+
+#### Higher Voltage Operation
+It is possible to run the LED supply at a voltage much higher than Vdd. In this case, the circuit's power dissipation may increase, which may cause issues.
+
+#### Power Supply Oscillations
+In some setups with high inductance on the power supply, oscillations may occur in the waveform. In the event this occurs (generally with external supplies that have long leads), decoupling the LED supply near the LEDs assists in reducing or removing this effect. 
 
 ## Summary
 This code example demonstrates the PIC18F16Q41's operational amplifier in use as a current regulator for LEDs.   
