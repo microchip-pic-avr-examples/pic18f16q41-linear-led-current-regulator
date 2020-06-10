@@ -1,4 +1,3 @@
-<!-- Please do not change this html logo with link -->
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
 # Linear LED Current Regulator using PIC18F16Q41
@@ -6,12 +5,12 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 
 ## Related Documentation
 
-<a href="https://www.microchip.com/wwwproducts/en/PIC18F16Q41">PIC18F16Q41 Product Information</a><br>
 TBxxxx, "Using Operational Amplifiers in PIC16 and PIC18"<br>
 TBxxxx, "Optimizing Internal Operational Amplifiers for Analog Signal Conditioning"<br>
 ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
 <a href="https://github.com/microchip-pic-avr-examples/pic18f16q41-switching-led-current-regulator">Code Example: Switching LED Current Regulator</a><br>
 
+The following documents and resources will be published soon.
 ## Software Used
 
 * <a href="http://www.microchip.com/mplab/mplab-x-ide">MPLAB® IDE 5.40 or newer</a>
@@ -20,6 +19,7 @@ ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
 
 ## Hardware Used
 
+* <a href="https://www.microchip.com/wwwproducts/en/PIC18F16Q41">PIC18F16Q41 Product Information</a><br>
 * <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM164137"> Microchip Curiosity Development Board (DM164137) </a>
 
 ## External Parts Required
