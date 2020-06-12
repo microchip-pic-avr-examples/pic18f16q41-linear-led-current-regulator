@@ -34,7 +34,8 @@ The following documents and resources will be published soon.
 Before building or operating this demo, ensure that the parts selected for this demo are appropriately rated for the peak power of this circuit.
 
 ## Wiring
-<img src="images/schematic.png" alt="Schematic" width="500px"/><br>
+<img src="images/schematic.png" alt="Schematic"/><br>
+*Example Output*
 
 | Pin | Function
 | --- | --------
@@ -42,6 +43,8 @@ Before building or operating this demo, ensure that the parts selected for this 
 | RC2 | OPA1OUT (Connect to the gate of the MOSFET)
 
 ## Operation
+<img src="images/Demo.gif" alt="Demo" width="500px"/><br>
+
 This code example configures the DAC2 to generate a triangle wave output that is used by the operational amplifier to set the current through the LED. The operational amplifier tries to set the current through the shunt resistor such that the voltage on the shunt (I x Rs) is equal to output of the DAC.
 
 The output current is approximately equal to **Iout = Vdac / 6.8**.
