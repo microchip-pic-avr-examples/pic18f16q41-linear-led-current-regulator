@@ -35,7 +35,6 @@ Before building or operating this demo, ensure that the parts selected for this 
 
 ## Wiring
 <img src="images/schematic.png" alt="Schematic"/><br>
-*Example Output*
 
 | Pin | Function
 | --- | --------
