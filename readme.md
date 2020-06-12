@@ -44,6 +44,7 @@ Before building or operating this demo, ensure that the parts selected for this 
 
 ## Operation
 <img src="images/Demo.gif" alt="Demo" width="500px"/><br>
+*Example Output*
 
 This code example configures the DAC2 to generate a triangle wave output that is used by the operational amplifier to set the current through the LED. The operational amplifier tries to set the current through the shunt resistor such that the voltage on the shunt (I x Rs) is equal to output of the DAC.
 
