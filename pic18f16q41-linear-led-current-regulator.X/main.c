@@ -43,7 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 
-//Description
+// State machine for making the LED "breathe"
 void LED_breathingStateMachine(void)
 {
     static char state = 0;
