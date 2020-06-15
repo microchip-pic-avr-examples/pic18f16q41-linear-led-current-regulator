@@ -10,7 +10,6 @@ TBxxxx, "Optimizing Internal Operational Amplifiers for Analog Signal Conditioni
 ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
 <a href="https://github.com/microchip-pic-avr-examples/pic18f16q41-switching-led-current-regulator">Code Example: Switching LED Current Regulator</a><br>
 
-The following documents and resources will be published soon.
 ## Software Used
 
 * <a href="http://www.microchip.com/mplab/mplab-x-ide">MPLAB® IDE 5.40 or newer</a>
