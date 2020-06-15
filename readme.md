@@ -25,7 +25,7 @@ The following documents and resources will be published soon.
 ## External Parts Required
 
 * 6.8 ohm resistor (current shunt)
-* 100k resistor
+* 100k ohm resistor
     * This resistor ensures the MOSFET remains off if the part is off or not configured.
 * N-Type MOSFET (rec. signal transistor, such as a 2N7000A)
 * LED(s)
