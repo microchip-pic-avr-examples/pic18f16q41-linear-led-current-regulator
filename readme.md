@@ -19,7 +19,7 @@ ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
 ## Hardware Used
 
 * <a href="https://www.microchip.com/wwwproducts/en/PIC18F16Q41">PIC18F16Q41</a><br>
-* <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM164137"> Microchip Curiosity Development Board (DM164137) </a>
+* <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM164137"> Microchip Curiosity Development Board (DM164137), Rev 4</a>
 
 ## External Parts Required
 
