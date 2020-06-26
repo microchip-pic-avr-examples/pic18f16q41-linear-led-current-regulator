@@ -5,9 +5,9 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 
 ## Related Documentation
 The following documents and resources will be published soon.
-TBxxxx, "Using Operational Amplifiers in PIC16 and PIC18"<br>
-TBxxxx, "Optimizing Internal Operational Amplifiers for Analog Signal Conditioning"<br>
-ANxxxx, "Analog Sensor Measurement and Acquisition"<br>
+TBxxxx: Using Operational Amplifiers in PIC16 and PIC18<br>
+TBxxxx: Optimizing Internal Operational Amplifiers for Analog Signal Conditioning<br>
+AN3521: Analog Sensor Measurement and Acquisition<br>
 <a href="https://github.com/microchip-pic-avr-examples/pic18f16q41-switching-led-current-regulator">Code Example: Switching LED Current Regulator</a><br>
 
 ## Software Used
