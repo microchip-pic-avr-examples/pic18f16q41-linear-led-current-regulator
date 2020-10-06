@@ -4,7 +4,7 @@
 Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant current regulator for an LED based load. The key to this code example is the Q41's operational amplifier (OPA) module that directly controls the MOSFET which acts as a low-side current regulator. The output of the OPA is controlled by using the digital-to-analog (DAC) converter.
 
 ## Related Documentation
-The following documents and resources will be published soon.
+The following documents and resources will be published soon.<br>
 TBxxxx: Using Operational Amplifiers in PIC16 and PIC18<br>
 TBxxxx: Optimizing Internal Operational Amplifiers for Analog Signal Conditioning<br>
 AN3521: Analog Sensor Measurement and Acquisition<br>
