@@ -4,10 +4,10 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-linear-led-current-regulator",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "displayName": "Linear LED Current Regulator with PIC18F16Q41",
         "projectName": "pic18f16q41-linear-led-current-regulator",
-        "shortDescription": "PIC18F16Q41 Linear Current Regulator for LEDs",
+        "shortDescription": "PIC18F16Q41 - Linear Current Regulator for LEDs",
         "ide": {
             "name": "MPLABX",
             "semverRange": ">=5.40.0"

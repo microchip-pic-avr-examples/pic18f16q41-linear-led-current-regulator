@@ -2,11 +2,11 @@
 /**/build/*
 /**/nbproject/*
 !/**/nbproject/*.xml
-/**/[Ff]ree/production/*
-/**/[Pp]ro/production/*
+/**/[Dd]ebug/production/*
+/**/[Rr]elease/production/*
 
 # Uncomment these to include hex/elf files
-#!/**/[Ff]ree/production/*.hex
-#!/**/[Ff]ree/production/*.elf
-#!/**/[Pp]ro/production/*.hex
-#!/**/[Pp]ro/production/*.elf
+#!/**/[Dd]ebug/production/*.hex
+#!/**/[Dd]ebug/production/*.elf
+#!/**/[Rr]elease/production/*.hex
+#!/**/[Rr]elease/production/*.elf
