@@ -7,8 +7,8 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 
 [TB3280: Using Operational Amplifiers in PIC16 and PIC18](http://ww1.microchip.com/downloads/en/DeviceDoc/Using-the-Operational-Amplifier-on-PIC16-and-PIC18-90003280A.pdf)  
 [TB3279: Optimizing Internal Operational Amplifiers for Analog Signal Conditioning](http://ww1.microchip.com/downloads/en/DeviceDoc/Optimizing-Internal-Operational-Amplifiers-for-Analog-Signal-Conditioning-90003279A.pdf)  
-[AN3521: Analog Sensor Measurement and Acquisition](http://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1002264)
- 
+[AN3521: Analog Sensor Measurement and Acquisition](http://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1002264)  
+
 [Code Example: PWM LED Current Regulator](https://github.com/microchip-pic-avr-examples/pic18f16q41-pwm-led-current-regulator)  
 
 ## Software Used
