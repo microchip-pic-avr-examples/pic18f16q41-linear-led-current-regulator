@@ -19,6 +19,8 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 
 ## Hardware Used
 
+**Note: Version 2.0.0 of this project switched to the Curiosity Nano. Previous versions used the Curiosity Development Board (DM164137).**
+
 * <a href="https://www.microchip.com/wwwproducts/en/PIC18F16Q41">PIC18F16Q41</a><br>
 * <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM164137"> Microchip Curiosity Development Board (DM164137) - Rev 4</a>
 
