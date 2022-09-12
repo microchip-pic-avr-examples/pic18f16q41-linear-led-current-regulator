@@ -44,7 +44,7 @@ Before building or operating this demo, ensure that the parts selected for this 
 ## Wiring
 ![Schematic Diagram](./images/schematic.png)
 
-**Note: VDD can be 3.3V or 5V. However, 5V should be used with a protection resistor.**
+**Note: VDD can be 3.3V or 5V. However, 5V should be used with a protection resistor, as the nano runs on 3.3V by default.**
 
 | Pin | Function
 | --- | --------
@@ -71,7 +71,9 @@ It is possible to run the LED supply at a voltage much higher than Vdd. Parts us
 **Warning: The input to any power or I/O pin on the PIC18F16Q41 must remain within the absolute maximum ratings stated in the device datasheet, otherwise permanent damage may occur.**
 
 #### Power Supply Oscillations
-In some setups with high inductance on the power supply, oscillations may occur in the waveform. In the event this occurs (generally with external supplies that have long leads), decoupling the LED supply near the LEDs assists in reducing or removing this effect.
+In some setups with high inductance on the power supply, small oscillations may occur in the waveform. In the event this occurs (generally with external supplies that have long leads), decoupling the LED supply near the LEDs assists in reducing or removing this effect. 
+
+**Note: Small gltiches in the output function are not caused by this. This is due to the settling time in the DAC and OPAMP.**
 
 ## Summary
 This code example demonstrates the PIC18F16Q41's operational amplifier in use as a current regulator for LEDs.   
