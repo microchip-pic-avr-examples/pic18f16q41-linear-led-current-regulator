@@ -7,14 +7,26 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/pin_manager.h</itemPath>
-        <itemPath>mcc_generated_files/device_config.h</itemPath>
-        <itemPath>mcc_generated_files/opa1.h</itemPath>
-        <itemPath>mcc_generated_files/mcc.h</itemPath>
-        <itemPath>mcc_generated_files/fvr.h</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
-        <itemPath>mcc_generated_files/tmr2.h</itemPath>
-        <itemPath>mcc_generated_files/dac2.h</itemPath>
+        <logicalFolder name="dac" displayName="dac" projectFiles="true">
+          <itemPath>mcc_generated_files/dac/dac2.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="fvr" displayName="fvr" projectFiles="true">
+          <itemPath>mcc_generated_files/fvr/fvr.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="opa" displayName="opa" projectFiles="true">
+          <itemPath>mcc_generated_files/opa/opa1.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <itemPath>mcc_generated_files/system/clock.h</itemPath>
+          <itemPath>mcc_generated_files/system/config_bits.h</itemPath>
+          <itemPath>mcc_generated_files/system/pins.h</itemPath>
+          <itemPath>mcc_generated_files/system/interrupt.h</itemPath>
+          <itemPath>mcc_generated_files/system/system.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
+          <itemPath>mcc_generated_files/timer/tmr2.h</itemPath>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -27,14 +39,35 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/fvr.c</itemPath>
-        <itemPath>mcc_generated_files/device_config.c</itemPath>
-        <itemPath>mcc_generated_files/mcc.c</itemPath>
-        <itemPath>mcc_generated_files/pin_manager.c</itemPath>
-        <itemPath>mcc_generated_files/opa1.c</itemPath>
-        <itemPath>mcc_generated_files/tmr2.c</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
-        <itemPath>mcc_generated_files/dac2.c</itemPath>
+        <logicalFolder name="dac" displayName="dac" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/dac/src/dac2.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="fvr" displayName="fvr" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/fvr/src/fvr.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="opa" displayName="opa" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/opa/src/opa1.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/system/src/pins.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/system.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/clock.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/config_bits.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/interrupt.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/timer/src/tmr2.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -42,7 +75,7 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>ConstantCurrent_Config.mc3</itemPath>
+      <itemPath>pic18f16q41-linear-led-current-regulator.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -53,13 +86,13 @@
         <targetDevice>PIC18F16Q41</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.20</languageToolchainVersion>
+        <languageToolchainVersion>2.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.5.124"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.14.237"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -112,9 +145,9 @@
         <property key="optimization-level" value="-O0"/>
         <property key="optimization-speed" value="false"/>
         <property key="optimization-stable-enable" value="false"/>
-        <property key="pack-struct" value="true"/>
         <property key="preprocess-assembler" value="true"/>
         <property key="short-enums" value="true"/>
+        <property key="tentative-definitions" value=""/>
         <property key="undefine-macros" value=""/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -180,7 +213,11 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -208,6 +245,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
@@ -219,6 +257,7 @@
       </Tool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </XC8-CO>
       <XC8-config-global>
         <property key="advanced-elf" value="true"/>
@@ -233,6 +272,7 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
+        <property key="wpo-lto" value="false"/>
       </XC8-config-global>
       <pk4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -305,7 +345,11 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -319,8 +363,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C62081/Documents/GIT Repos/pic18f16q41-constant-current-led-drive/pic18f16q41-constant-current-led-drive.X/debug/free/pic18f16q41-constant-current-led-drive_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -333,10 +375,10 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -349,13 +391,13 @@
         <targetDevice>PIC18F16Q41</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.20</languageToolchainVersion>
+        <languageToolchainVersion>2.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.5.124"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.14.237"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -408,9 +450,9 @@
         <property key="optimization-level" value="-Os"/>
         <property key="optimization-speed" value="false"/>
         <property key="optimization-stable-enable" value="false"/>
-        <property key="pack-struct" value="true"/>
         <property key="preprocess-assembler" value="true"/>
         <property key="short-enums" value="true"/>
+        <property key="tentative-definitions" value=""/>
         <property key="undefine-macros" value=""/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -476,7 +518,11 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -504,6 +550,7 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
@@ -515,6 +562,7 @@
       </Tool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
       </XC8-CO>
       <XC8-config-global>
         <property key="advanced-elf" value="true"/>
@@ -529,6 +577,7 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
+        <property key="wpo-lto" value="false"/>
       </XC8-config-global>
       <pk4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -601,7 +650,11 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -615,8 +668,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C62081/Documents/GIT Repos/pic18f16q41-constant-current-led-drive/pic18f16q41-constant-current-led-drive.X/debug/pro/pic18f16q41-constant-current-led-drive_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -629,10 +680,10 @@
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

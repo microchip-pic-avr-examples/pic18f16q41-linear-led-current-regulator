@@ -1,91 +1,106 @@
-/**
-  Generated Main Source File
-
-  Company:
-    Microchip Technology Inc.
-
-  File Name:
-    main.c
-
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
-  Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F16Q41
-        Driver Version    :  2.00
+ /*
+ * MAIN Generated Driver File
+ * 
+ * @file main.c
+ * 
+ * @defgroup main MAIN
+ * 
+ * @brief This is the generated driver implementation file for the MAIN driver.
+ *
+ * @version MAIN Driver Version 1.0.0
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+© [2022] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use Microchip 
+    software and any derivatives exclusively with Microchip products. 
+    You are responsible for complying with 3rd party license terms  
+    applicable to your use of 3rd party software (including open source  
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
+    THIS SOFTWARE.
 */
+#include "mcc_generated_files/system/system.h"
 
-#include "mcc_generated_files/mcc.h"
+#include <stdbool.h>
+#include <stdint.h>
 
-// State machine for making the LED "breathe"
-void LED_breathingStateMachine(void)
+/* 
+ * This value sets the maximum current
+ * 
+ * Vref / Rsense = Imax
+ * Imax / 256 = Ires
+ * Ires * Value = Ilim
+ * 
+ * With 1.024V = Vref, 6.8 = Rsense
+ * Imax = ~150mA, Ires = 585uA per bit
+ * Ilim = ~17.6mA
+ */
+#define CURRENT_LIMIT 30
+
+void LED_stateMachine(void)
 {
-    static char state = 0;
+    static bool isRising = true;
+    static uint8_t dacValue = 0x00;
     
-    if (state == 0)
+    if (isRising)
     {
-        if (DAC2_GetOutput() == 0xFF)
+        //Brightness level is rising
+        
+        if (dacValue == CURRENT_LIMIT)
         {
-            state = 1;
+            isRising = false;
         }
         else
         {
-            DAC2_SetOutput(DAC2_GetOutput() + 1);
-        } 
+            dacValue++;
+        }
     }
     else
     {
-        if (DAC2_GetOutput() == 0x00)
+        //Brightness level is falling
+        
+        if (dacValue == 0x00)
         {
-            state = 0;
+            isRising = true;
         }
         else
         {
-            DAC2_SetOutput(DAC2_GetOutput() - 1);
-        } 
+            dacValue--;
+        }
     }
+    
+    DAC2_SetOutput(dacValue);
 }
 
-void main(void)
+int main(void)
 {
-    // Initialize the device
     SYSTEM_Initialize();
-    
-    TMR2_SetInterruptHandler(&LED_breathingStateMachine);
-    
-    INTERRUPT_GlobalInterruptEnable();
-    
-    //Start the LED state machine
-    TMR2_Start();
 
-    while (1)
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
+    // Use the following macros to: 
+
+    Timer2_OverflowCallbackRegister(&LED_stateMachine);
+    
+    // Enable the Global Interrupts 
+    INTERRUPT_GlobalInterruptEnable(); 
+
+    // Disable the Global Interrupts 
+    //INTERRUPT_GlobalInterruptDisable(); 
+
+
+    while(1)
     {
-        // User defined code
-    }
+    }    
 }

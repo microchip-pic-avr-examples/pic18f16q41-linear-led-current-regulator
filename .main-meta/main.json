@@ -4,27 +4,27 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-linear-led-current-regulator",
-        "version": "1.0.4",
+        "version": "2.0.0",
         "displayName": "Linear LED Current Regulator with PIC18F16Q41",
         "projectName": "pic18f16q41-linear-led-current-regulator",
         "shortDescription": "PIC18F16Q41 - Linear Current Regulator for LEDs",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=5.40.0"
+            "semverRange": ">=6.0.0"
         },
         "compiler": [
             {
                 "name": "XC8",
-                "semverRange": "^2.20.0"
+                "semverRange": "^2.40.0"
             }
         ],
         "dfp": {
             "name": "PIC18F-Q_DFP",
-            "semverRange": "^1.5.124"
+            "semverRange": "^1.14.237"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=3.95.0"
+            "semverRange": ">=5.1.16"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -36,26 +36,7 @@
                 "versionRange": "*"
             }
         },
-        "author": "Microchip",
-        "subcategories": [
-            "MCC",
-            [
-                "Peripherals",
-                "OPA"
-            ],
-            [
-                "Peripherals",
-                "DAC"
-            ],
-            [
-                "Peripherals",
-                "FVR"
-            ],
-            [
-                "Peripherals",
-                "TMR2"
-            ]
-        ],
+        "author": "Robert Perkel",
         "peripherals": [
             "OPA",
             "DAC",
@@ -63,7 +44,6 @@
             "TMR2"
         ],
         "keywords": [
-            "MCC",
             "Intelligent Analog"
         ],
         "additionalData": {
