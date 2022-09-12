@@ -44,7 +44,7 @@ Before building or operating this demo, ensure that the parts selected for this 
 ## Wiring
 ![Schematic Diagram](./images/schematic.png)
 
-**Note: VDD can be 3.3V or 5V. However, 5V should be used with a protection resistor, as the nano runs on 3.3V by default.**
+**Note: VDD should be connected to 3.3V**
 
 | Pin | Function
 | --- | --------
@@ -66,7 +66,7 @@ The output current is approximately equal to **Iout = Vdac / 6.8**.
 Due to the MOSFET acting as voltage controlled current sink, there is some short circuit protection built into the circuit. However, it is not recommended to depend on this circuit as the only means of protection. Prolonged short circuits may cause heating of the FET and shunt.
 
 #### Higher Voltage Operation
-It is possible to run the LED supply at a voltage much higher than Vdd. Parts used must be evaluated for power dissipation and operating voltage. In addition, protecting the PIC18F16Q41 from voltages higher than Vdd is critical. A simple resistor from the current sense pin to the Operational Amplifier input provides basic protection, although this has not been tested and characterized. (The protection network must be analyzed with regards to the specific conditions in circuit.)
+It is possible to run the LED supply at a voltage much higher than Vdd. Parts used must be evaluated for power dissipation and operating voltage. In addition, protecting the PIC18F16Q41 from voltages higher than Vdd is critical. 
 
 **Warning: The input to any power or I/O pin on the PIC18F16Q41 must remain within the absolute maximum ratings stated in the device datasheet, otherwise permanent damage may occur.**
 
