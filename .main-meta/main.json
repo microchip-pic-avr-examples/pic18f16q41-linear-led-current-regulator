@@ -40,7 +40,7 @@
         "peripherals": [
             "OPA",
             "DAC",
-            "FVR",
+            "VREF",
             "TMR2"
         ],
         "keywords": [

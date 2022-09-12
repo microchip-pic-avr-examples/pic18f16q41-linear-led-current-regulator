@@ -274,6 +274,11 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <nEdbgTool>
+        <property key="memories.programmemory.ranges" value="0-ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C62081/Documents/GIT Repos/pic18f16q41-linear-led-current-regulator/pic18f16q41-linear-led-current-regulator.X/debug/free/pic18f16q41-linear-led-current-regulator_ptg"/>
+      </nEdbgTool>
       <pk4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
@@ -579,6 +584,11 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <nEdbgTool>
+        <property key="memories.programmemory.ranges" value="0-ffff"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C62081/Documents/GIT Repos/pic18f16q41-linear-led-current-regulator/pic18f16q41-linear-led-current-regulator.X/debug/pro/pic18f16q41-linear-led-current-regulator_ptg"/>
+      </nEdbgTool>
       <pk4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
