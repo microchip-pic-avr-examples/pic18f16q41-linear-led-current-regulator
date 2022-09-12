@@ -21,7 +21,7 @@ Using only a few peripherals, the PIC18F16Q41 can be used as a linear constant c
 
 **Note: Version 2.0.0 of this project switched to the Curiosity Nano and modified the circuit.**
 
-* [PIC18F16Q41 Curiosity Nano Evaluation Kit (EV26Q64A)](https://www.microchipdirect.com/product/EV26Q64A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-linear-led-current-regulator-github)
+* [PIC18F16Q41 Curiosity Nano Evaluation Kit (EV26Q64A)](https://www.microchip.com/en-us/development-tool/EV26Q64A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-linear-led-current-regulator-github)
 * [Curiosity Nano Adapter Board (AC164162)](https://www.microchip.com/en-us/development-tool/AC164162?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-linear-led-current-regulator-github)
 
 ## External Parts Required
